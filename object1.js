@@ -22,5 +22,26 @@ console.log(student);
 console.log(anotherStudent);
 
 console.log('#################### object creation ###################');
+console.log(':::::object literal:::::');
+var mango1 = {color: "green", 
+	shape: "round", 
+	taste: "sour", 
+	whatColorAmI: function () {
+		return this.color;	
+	}
+};
+console.log(mango1);
+console.log(mango1.whatColorAmI());
+
+console.log(':::::object constructor:::::');
+var mango2 = new Object();
+mango2.color =  "yellow";
+mango2.shape =  "round";
+mango2.taste =  "sweet";
+mango2.whatColorAmI =  function () {
+	return this.color;
+}
+console.log(mango2);
+console.log(mango2.whatColorAmI());
 
 
