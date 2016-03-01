@@ -54,12 +54,27 @@ function fruit (fruitName, fruitColor, fruitLand) {
         console.log(this.fruitName + "-" + this.fruitColor + "-" + this.fruitLand);
     }
 }
-fruit.prototype.y =11;
 var banana = new fruit("sagor", "yellow", "dhaka");
 console.log(banana);
 banana.showDetails();
-console.log(banana.y);
-banana.x = 10;
-console.log(banana);
 
 console.log('                            :::::prototype pattern:::::                               ');
+function Fruit () {
+}
+Fruit.prototype.fruitName = "fruit";
+Fruit.prototype.fruitColor = "color";
+Fruit.prototype.fruitLand = "area";
+Fruit.prototype.showDetails = function () {
+	console.log(this.fruitName + "-" + this.fruitColor + "-" + this.fruitLand);
+}
+var testFruit = new Fruit();
+console.log(testFruit);
+testFruit.showDetails();
+
+console.log('############################ Own & Inherited Property #################################');
+console.log("banana has property 'fruitName':" + ("fruitName" in banana).toString() + ", own:" + (banana.hasOwnProperty("fruitName")).toString());
+console.log("banana has property 'toString':" + ("toString" in banana).toString() + ", own:" + (banana.hasOwnProperty("toString")).toString());
+console.log("testFruit has property 'fruitName':" + ("fruitName" in testFruit).toString() + ", own:" + (testFruit.hasOwnProperty("fruitName")).toString());
+console.log("testFruit has property 'toString':" + ("toString" in testFruit).toString() + ", own:" + (testFruit.hasOwnProperty("toString")).toString());
+
+
