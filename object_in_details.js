@@ -92,5 +92,11 @@ console.log("employee id:" + employee1.id + ", employee phone:" + employee1.phon
 delete employee.prototype.company;
 console.log("employee id:" + employee1.id + ", employee phone:" + employee1.phone + ", company name:" + employee1.company);
 
-
+console.log('############################## Object Serialize Deserialize ############################');
+var testObject = {name: "hello", type: "object"};
+console.log(testObject);
+var testObjToString = JSON.stringify(testObject);
+console.log(testObjToString);
+var testStringToObject = JSON.parse(testObjToString);
+console.log(testStringToObject);
 
