@@ -77,4 +77,20 @@ console.log("banana has property 'toString':" + ("toString" in banana).toString(
 console.log("testFruit has property 'fruitName':" + ("fruitName" in testFruit).toString() + ", own:" + (testFruit.hasOwnProperty("fruitName")).toString());
 console.log("testFruit has property 'toString':" + ("toString" in testFruit).toString() + ", own:" + (testFruit.hasOwnProperty("toString")).toString());
 
+console.log('################################ Deletion of Property #################################');
+function employee (id, phone) {
+    this.id = id;
+    this.phone = phone;
+}
+employee.prototype.company = "to to company";
+var employee1 = new employee("1", "123456");
+console.log("employee id:" + employee1.id + ", employee phone:" + employee1.phone + ", company name:" + employee1.company);
+delete employee1.phone;
+console.log("employee id:" + employee1.id + ", employee phone:" + employee1.phone + ", company name:" + employee1.company);
+delete employee1.company;
+console.log("employee id:" + employee1.id + ", employee phone:" + employee1.phone + ", company name:" + employee1.company);
+delete employee.prototype.company;
+console.log("employee id:" + employee1.id + ", employee phone:" + employee1.phone + ", company name:" + employee1.company);
+
+
 
