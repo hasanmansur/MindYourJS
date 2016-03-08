@@ -60,11 +60,33 @@ console.log("---------------------------::created with Object literal::---------
 var myAnotherObj = {name: "hasan"};
 console.log(myAnotherObj.constructor);
 
+console.log('################################ Prototype-based Inheritance #################');
 
+function Plant () {
+	this.country = "Bangladesh";
+	this.isOrganic = true;
+}
 
+Plant.prototype.showNameColor = function () {
+	console.log("name:" + this.fruitName + ", color:" + this.fruitColor);
+}
 
+function Fruit (fruitName, fruitColor) {
+	this.fruitName = fruitName;
+	this.fruitColor = fruitColor;
+	this.showCountryOrganic = function () {
+		console.log("country:" + this.country + ", organic:" + this.isOrganic);
+	}
+}
 
+Fruit.prototype = new Plant();
 
+/*
+instance of Fruit now has inherited properties 'country', 'isOrganic' from Plant & inherited method 'showNameColor' from Plant.prototype
+*/
+var banana = new Fruit("banana", "yellow");
+banana.showNameColor();
+banana.showCountryOrganic();
 
 
 
