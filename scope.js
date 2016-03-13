@@ -65,9 +65,19 @@ showMyName2();
 /*
 If a variable is initialized (assigned a value) without first being declared with the var keyword, it is automatically added to the global context and it is thus a global variable
 */
+console.log(":::::::::::::::::::::::::::::::::::::");
 function showAge () {
     age = "99";
     console.log(age);
 }
 showAge();
 console.log(age);
+
+console.log(":::::::::::::::::::::::::::::::::::::");
+for (i = 0; i < 3; i++) {
+}
+function aNumber () {
+    console.log(i);
+}
+aNumber();
+
