@@ -1,47 +1,35 @@
-//############################ js hoisting ###################################
-
-//#########case1#################
+console.log("################################### Variable Hoisting #############################");
 
 /*
-var x = 1
-function showX(){
-	console.log(x)
-	var x = 2
-	console.log(x)
+All variable declarations are hoisted (lifted and declared) to the top of the function, if defined in a function, or the top of the global context, if outside a function.
+
+Only variable declarations are hoisted to the top, not variable initialization or assignments.
+*/
+
+function showName () {
+    console.log("name:" + name); // undefned as only declaration is hoisted
+    name = "hasan";
+    console.log("name:" + name); // prints 'hasan'
+    var name;
 }
-showX()
-console.log(x)
-*/
+showName();
 
-//#########case2#################
 /*
-x = 1;
-function myfunc(){
-	this.x = x
-	var x = 99
-	console.log(x)
+function declaration takes precedence over variable declarations (but not over variable assignment).
+variable assignment is not hoisted, and neither is function assignment.
+*/
+console.log("################################### Function Hoisting #############################");
+var myName;
+function myName () {
+    console.log ("hasan");
 }
+console.log(typeof myName); // function
 
-console.log(x)
-myvar = new myfunc()
-console.log(myvar.x)
-*/
-//########case3#################
-/*
-var x
-function x(){}
-console.log(typeof x)
-*/
-//########case4#################
-/*
-var x = 1
-function x(){}
-console.log(typeof x)
-*/
-//########case5#################
-/*
-var x
-function x(){}
-x = 1
-console.log(typeof x)
-*/
+console.log("::::::::::::::::::::::::::::::::::::::::");
+var myName = "hasan";
+function myName () {
+    console.log ("hasan");
+}
+console.log(typeof myName); // string
+
+
