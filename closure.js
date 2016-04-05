@@ -19,6 +19,27 @@ function showName (firstName, lastName) {
 }
 showName("hasan", "mansur");
 
+console.log("::::::::::::::::::::::::::");
+
+function grandPa (country) {
+    var nameGrandFather = "grand father";
+    function papa (city) {
+        var nameFather = "father";
+        function child (area) {
+            var nameChild = "child";
+            console.log("grand node: " + nameGrandFather);
+            console.log("country: " + country);
+            console.log("father node: " + nameFather);
+            console.log("city: " + city);
+            console.log("child node: " + nameChild);
+            console.log("area: " + area);
+        }
+        return child("gulshan");
+    }
+    return papa("dhaka");
+}
+grandPa("bangladesh");
+
 /*
 Closures have access to the outer function’s variable even after the outer function returns
 */
