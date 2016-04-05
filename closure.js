@@ -44,15 +44,15 @@ grandPa("bangladesh");
 Closures have access to the outer function’s variable even after the outer function returns
 */
 console.log("-------------------------------------------------------------------");
-function printName (firstName, lastName) {
+function printName (firstName) {
     var intro = "your name is ";
-    function makeFullName () {
-        console.log(intro + firstName + lastName);
+    function makeFullName (lastName) {
+        return intro + firstName + lastName;
     }
     return makeFullName;
 }
-var printFullName = printName("hasan", "mansur");
-printFullName();
+var printFullName = printName("hasan");
+console.log(printFullName("mansur"));
 
 /*
 Closures store references to the outer function’s variables; they do not store the actual value.
