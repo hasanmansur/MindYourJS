@@ -24,3 +24,58 @@ function grandFunction (firstname, lastname, cb) {
 grandFunction ("hasan", "mansur", function (fn, ln, st, cb) {
     console.log(cb(fn, ln, st));
 });
+
+/*
+Make Sure Callback is a Function Before Executing It
+*/
+console.log("--------------------------------------------------------------------------");
+function getInput (name, cb) {
+    if(typeof cb === "function") {
+        cb(name);
+    }
+    else {
+        console.log(typeof cb);
+    }
+}
+
+function printInput (x) {
+    console.log(x);
+}
+
+getInput("hasan", printInput);
+console.log("--------------------------------------------------------------------------");
+
+/*
+Multiple Callback Functions Allowed
+*/
+function successCallback(res) {
+    return res;
+}
+
+function errorCallback(res) {
+    return res;
+}
+
+function hello(x, cb) {
+    var outCompare = compare(x);
+    var finalResult;
+    if(outCompare.status == "OK") {
+        finalResult = cb.success(outCompare);
+    }
+    else {
+        finalResult = cb.error(outCompare);
+    }
+    return finalResult;
+}
+
+function compare(str) {
+    var predefinedStr = "hasan";
+    if(str == predefinedStr) {
+        return {status: "OK", result: {id: 1}};
+    }
+    else {
+        return {status: "error", code: 404, message: "not found"};
+    }
+}
+
+console.log(hello("hasan", {success: successCallback, error: errorCallback}));
