@@ -84,3 +84,43 @@ function compare(str) {
 }
 
 console.log(hello("hasan", {success: successCallback, error: errorCallback}));
+
+/*
+Code below is called 'callback hell' because of the difficulty of following the code due to the many callbacks.
+
+Two solutions to this problem:
+1. Name your functions and declare them and pass just the name of the function as the callback, instead of defining an anonymous function in the parameter of the main function.
+2. Modularity: Separate your code into modules, so you can export a section of code that does a particular job. Then you can import that module into your larger application.
+
+*/
+console.log("-------------------------------------------Callback Hell----------------------------------------------");
+
+function innermost (str, cb) {
+    console.log("-----hello from innermost");
+    cb(str);
+    console.log("-----bye from innermost");
+}
+function inner (str, cb) {
+    console.log("---hello from inner");
+    cb(str);
+    console.log("---bye from inner");
+}
+function global (str, cb) {
+    console.log("-hello from global");
+    cb(str);
+    console.log("-bye from global");
+}
+
+global("hello", function (x) {
+    console.log("--calling inner");
+    inner(x, function (x) {
+        console.log("---calling innermost");
+        innermost(x, function (x) {
+            console.log("------" + x);
+        });
+        console.log("---returned from innermost");
+    });
+    console.log("--returned from inner");
+});
+
+
