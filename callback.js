@@ -96,9 +96,9 @@ Two solutions to this problem:
 console.log("-------------------------------------------Callback Hell----------------------------------------------");
 
 function innermost (str, cb) {
-    console.log("-----hello from innermost");
+    console.log("------hello from innermost");
     cb(str);
-    console.log("-----bye from innermost");
+    console.log("------bye from innermost");
 }
 function inner (str, cb) {
     console.log("---hello from inner");
@@ -114,13 +114,13 @@ function global (str, cb) {
 global("hello", function (x) {
     console.log("--calling inner");
     inner(x, function (x) {
-        console.log("---calling innermost");
+        console.log("----calling innermost");
         innermost(x, function (x) {
-            console.log("------" + x);
+            console.log("-------" + x);
         });
-        console.log("---returned from innermost");
+        console.log("----returned innermost");
     });
-    console.log("--returned from inner");
+    console.log("--returned inner");
 });
 
 
