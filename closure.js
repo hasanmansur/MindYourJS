@@ -21,7 +21,7 @@ showName("hasan", "mansur");
 
 console.log("::::::::::::::::::::::::::");
 
-function grandPa (country) {
+function grandPa (country, area) {
     var nameGrandFather = "grand father";
     function papa (city) {
         var nameFather = "father";
@@ -34,11 +34,11 @@ function grandPa (country) {
             console.log("child node: " + nameChild);
             console.log("area: " + area);
         }
-        return child("gulshan");
+        return child(area);
     }
     return papa("dhaka");
 }
-grandPa("bangladesh");
+grandPa("bangladesh","mirpur");
 
 /*
 Closures have access to the outer function’s variable even after the outer function returns
