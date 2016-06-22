@@ -46,7 +46,7 @@ console.log(mango2.whatColorAmI());
 
 console.log('######################### practical patterns for object creation ####################');
 console.log('                           :::::constructor pattern:::::                             ');
-function fruit (fruitName, fruitColor, fruitLand) {
+function Fruit (fruitName, fruitColor, fruitLand) {
     this.fruitName = fruitName;
     this.fruitColor = fruitColor;
     this.fruitLand = fruitLand;
@@ -54,20 +54,20 @@ function fruit (fruitName, fruitColor, fruitLand) {
         console.log(this.fruitName + "-" + this.fruitColor + "-" + this.fruitLand);
     }
 }
-var banana = new fruit("sagor", "yellow", "dhaka");
+var banana = new Fruit("sagor", "yellow", "dhaka");
 console.log(banana);
 banana.showDetails();
 
 console.log('                            :::::prototype pattern:::::                               ');
-function Fruit () {
+function Fruit2 () {
 }
-Fruit.prototype.fruitName = "fruit";
-Fruit.prototype.fruitColor = "color";
-Fruit.prototype.fruitLand = "area";
-Fruit.prototype.showDetails = function () {
+Fruit2.prototype.fruitName = "fruit";
+Fruit2.prototype.fruitColor = "color";
+Fruit2.prototype.fruitLand = "area";
+Fruit2.prototype.showDetails = function () {
 	console.log(this.fruitName + "-" + this.fruitColor + "-" + this.fruitLand);
 }
-var testFruit = new Fruit();
+var testFruit = new Fruit2();
 console.log(testFruit);
 testFruit.showDetails();
 
