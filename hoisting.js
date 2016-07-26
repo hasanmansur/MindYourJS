@@ -16,7 +16,27 @@ function showName () {
 }
 showName();
 
+/*
+function declaration takes precedence over variable declarations (but not over variable assignment).
+variable assignment is not hoisted, and neither is function assignment.
+*/
+console.log("################################### Function Hoisting #############################");
+
+var myName;
+function myName () {
+    console.log ("hasan");
+}
+
+console.log(typeof myName); // function
+
 console.log("::::::::::::::::::::::::::::::::::::::::");
+var myName = "hasan";
+function myName () {
+    console.log ("hasan");
+}
+console.log(typeof myName); // string
+
+console.log("################################### How hoisting code interpreted #############################");
 
 var name = "Shahadat";
 
@@ -28,35 +48,15 @@ var name = "Shahadat";
 
 console.log("::::::::::::::::::::::::::::::::::::::::");
 /***
-		name will be undefined. because local variable declaration is hoisted here,
-		javascript interpret this code as it is like below:
-		var name;
-		console.log(name);
-		name = "Hossain";
-		console.log(name);
+	name will be undefined. because local variable declaration is hoisted here,
+	javascript interpret this code as it is like below:
+	var name;
+	console.log(name);
+	name = "Hossain";
+	console.log(name);
 ***/
 (function(){
 	console.log(name); // undefined 
 	var name = "Hossain";
 	console.log(name); // Hossain
 })();
-
-
-/*
-function declaration takes precedence over variable declarations (but not over variable assignment).
-variable assignment is not hoisted, and neither is function assignment.
-*/
-console.log("################################### Function Hoisting #############################");
-
-function myName () {
-    console.log ("hasan");
-}
-var myName;
-console.log(typeof myName); // function
-
-console.log("::::::::::::::::::::::::::::::::::::::::");
-var myName = "hasan";
-function myName () {
-    console.log ("hasan");
-}
-console.log(typeof myName); // string
