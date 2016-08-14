@@ -10,5 +10,5 @@ Topics covered are as follows:
 * Closure
 * Callback
 
-Repo name "mindYourJS" is inspired from [Mind Your Language](https://www.youtube.com/playlist?list=PLxRxwnkeaHZv5JEKUyrQFPQbVuGVvo6hh), a famous  British comedy television series.
+Repo name "mindYourJS" is inspired from [Mind Your Language](https://www.youtube.com/watch?v=cdfukpp_jfM&list=PLi0SGyv1KPsdo8PgKoZWggcLofncM-DQK), a famous  British comedy television series.
 
