@@ -1,4 +1,4 @@
-# mindYourJS
+# MindYourJS
 
 This a collection of simple code snippets regarding some basic concepts of Javascript. Some days ago I started to study from http://javascriptissexy.com/ & I felt the urgence of making these code snippets so that I(or someone else interested) may look into it time to time.
 
